@@ -5,20 +5,23 @@ const Banner = () => {
   return (
     <Section>
       <div className="Wrapper">
-        <div>
-          <h1>Dr. Ney Simões</h1>
-          <p>
-            Ginecologista e Obstetra, especializado em endometriose e pós
-            graduado em endoscopia ginecológica e cirurgia minimamente invasiva.
-          </p>
-          <button>Agende sua Consulta</button>
-        </div>
+        <h1>Dr. Ney Simões</h1>
+        <p>
+          Ginecologista e Obstetra, especializado em endometriose e pós graduado
+          em endoscopia ginecológica e cirurgia minimamente invasiva.
+        </p>
+        <button>Agende sua Consulta</button>
+      </div>
+      <div className="img-wrapper">
         <Image
           priority
-          src="/images/logo-dark.svg"
+          src="/images/foto-ney.jpg"
           alt="Ney Simões"
-          width={400}
-          height={400}
+          fill
+          style={{
+            objectFit: "contain",
+          }}
+          sizes="100%"
         />
       </div>
     </Section>
@@ -30,18 +33,18 @@ const Section = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 1rem 12rem;
+  padding: 1rem 8rem;
   color: #506e62;
   background-color: #c9c6a5;
   width: 100%;
   height: calc(400px + 4rem);
-  padding: 2rem;
+  padding: 8rem;
   .Wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    width: 800px;
+    align-items: start;
+    width: 50%;
   }
   p {
     width: 90%;
@@ -62,6 +65,27 @@ const Section = styled.section`
       background-color: #c9c6a5;
       color: #506e62;
     }
+  }
+  .img-wrapper {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    width: 325px;
+    height: 400px;
+    padding: 0;
+    border: 4px solid #506e62;
+    box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1);
+    // ::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: red;
+    //   z-index: 1;
+    //   transform: scale(1.1);
+    // }
   }
 `;
 
