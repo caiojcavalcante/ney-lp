@@ -11,7 +11,7 @@ import { Autoplay } from "swiper";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Statements = () => {
-    const isNonMobile = useMediaQuery("(min-width:1000px)");
+  const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
     <Section>
       <h2>Depoimentos</h2>
@@ -149,7 +149,7 @@ const Statements = () => {
           slidesPerView={2}
           spaceBetween={isNonMobile ? 100 : 10}
           loop={true}
-          autoplay={{ delay: 100 }}
+          autoplay={{ delay: 0 }}
           speed={7000}
           centeredSlides
           freeMode
@@ -297,10 +297,25 @@ const Section = styled.section`
   }
   .swiper {
     height: 100%;
+    ::after {
+      z-index: 1;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        #506e62 0%,
+        #0000 20%,
+        #0000 80%,
+        #506e62 100%
+      );
+    }
   }
   .swiper-container {
     color: #c9c6a5;
-    background-color: #f00;
   }
   .swiper-slide {
     text-align: center;
