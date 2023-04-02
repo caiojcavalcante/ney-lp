@@ -31,7 +31,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -54,7 +54,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -77,7 +77,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -100,7 +100,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -123,7 +123,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -160,7 +160,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -183,7 +183,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -206,7 +206,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -229,7 +229,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -252,7 +252,7 @@ const Statements = () => {
             <Card>
               <div className="img-wrapper">
                 <Image
-                  sizes="50px"
+                  sizes="100px"
                   src="/images/foto-ney2.jpg"
                   alt="Ney Simões"
                   fill
@@ -276,29 +276,6 @@ const Statements = () => {
     </Section>
   );
 };
-/*
-<Card>
-<div className="img-wrapper">
-  <Image
-  sizes="50px"
-    src="/images/foto-ney2.jpg"
-    alt="Ney Simões"
-    fill
-    style={{
-      objectFit: "cover",
-    }}
-  />
-</div>
-<div className="baloon">
-  <h1>Maria das dores</h1>
-  <a>
-    Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada com
-    minha saúde, mas ele foi muito atencioso e me fez sentir à vontade
-    durante todo o atendimento.
-  </a>
-</div>
-</Card>
-*/
 const Section = styled.section`
   background-color: #506e62;
   z-index: 0;

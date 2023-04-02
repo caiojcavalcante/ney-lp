@@ -6,30 +6,38 @@ const About = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
     <>
-      <Section
-        isNonMobile={isNonMobile}
+      <div
+        className="wrapper"
+        style={{
+          width: "100%",
+          backgroundColor: "#506e62",
+          display: "flex",
+          justifyContent: "center",
+        }}
       >
-        <div>
-          <h2>Sobre o Dr.</h2>
-          <p>
-            O Dr. Ney Simões é um médico obstetra com mais de 15 anos de
-            experiência na área. Ele sempre soube que queria se dedicar à
-            obstetrícia desde o início de sua carreira, pois acredita que ajudar
-            as mulheres a trazerem seus filhos ao mundo é uma das coisas mais
-            importantes que um médico pode fazer.
-          </p>
-        </div>
-        <div className="img-wrapper">
-          <Image
-            src="/images/foto-ney2.jpg"
-            alt="Ney Simões"
-            fill
-            style={{
-              objectFit: "contain",
-            }}
-          />
-        </div>
-      </Section>
+        <Section isNonMobile={isNonMobile}>
+          <div>
+            <h2>Sobre o Dr.</h2>
+            <p>
+              O Dr. Ney Simões é um médico obstetra com mais de 15 anos de
+              experiência na área. Ele sempre soube que queria se dedicar à
+              obstetrícia desde o início de sua carreira, pois acredita que
+              ajudar as mulheres a trazerem seus filhos ao mundo é uma das
+              coisas mais importantes que um médico pode fazer.
+            </p>
+          </div>
+          <div className="img-wrapper">
+            <Image
+              src="/images/foto-ney2-sem-fundo.jpg"
+              alt="Ney Simões"
+              fill
+              style={{
+                objectFit: "contain",
+              }}
+            />
+          </div>
+        </Section>
+      </div>
     </>
   );
 };
@@ -37,25 +45,34 @@ const About = () => {
 const Section = styled.section<{ isNonMobile: boolean }>`
   color: #506e62;
   background-color: #c9c6a5;
-  width: 100%;
-  padding: 2rem 8rem 2rem 8rem;
+  width: 90vw;
+  height: ${({ isNonMobile }) => (isNonMobile ? "380px" : "600px")};
+  max-width: 1000px;
+  padding: 2rem;
+  border-radius: 2rem;
   display: flex;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   flex-direction: ${({ isNonMobile }) => (isNonMobile ? "row" : "column")};
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 2rem;
+  p {
+    font-size: 0.9rem;
+  }
   .img-wrapper {
     position: relative;
-    border-radius: 2rem;
-    border: 1px solid #506e62;
+    /* border-radius: 2rem;
+    border: 1px solid #506e62; */
     overflow: hidden;
     width: 263px;
     height: 320px;
   }
   div {
-    width: ${({ isNonMobile }) => (isNonMobile ? "50%" : "90vw")};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: ${({ isNonMobile }) => (isNonMobile ? "50%" : "80vw")};
     max-width: 500px;
-    height: 100%;
+    height: 40%;
   }
 `;
 
