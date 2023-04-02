@@ -26,7 +26,6 @@ const Specialties = () => {
     <div
       style={{
         width: "100%",
-        backgroundColor: "#506e62",
         display: "flex",
         justifyContent: "center",
       }}
@@ -142,7 +141,6 @@ const Section = styled.section<{ isNonMobile: boolean }>`
   flex-direction: ${({ isNonMobile }) => (isNonMobile ? "row" : "column")};
   justify-content: center;
   align-items: center;
-  background-color: #506e62;
   color: #c9c6a5;
   padding: 2rem;
   gap: 2rem;

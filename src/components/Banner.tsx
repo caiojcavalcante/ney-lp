@@ -5,49 +5,59 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 const Banner = () => {
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   return (
-    <Section isNonMobile={isNonMobile}>
-      <div className="Wrapper">
-        <h1>Dr. Ney Simões</h1>
-        <p>
-          Ginecologista e Obstetra, especializado em endometriose e pós graduado
-          em endoscopia ginecológica e cirurgia minimamente invasiva.
-        </p>
-        <button>Agende sua Consulta</button>
-      </div>
-      <div className="img-wrapper">
-        <Image
-          priority
-          src="/images/foto-ney.jpg"
-          alt="Ney Simões"
-          fill
-          style={{
-            objectFit: "contain",
-          }}
-          sizes="100%"
-        />
-      </div>
-    </Section>
+    <div
+        style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "#c9c6a5",
+        }}
+    >
+      <Section isNonMobile={isNonMobile}>
+        <div className="Wrapper">
+          <h1>Dr. Ney Simões</h1>
+          <p>
+            Pós-graduado em Reprodução Humana e Medicina Fetal especialista em
+            acompanhamento da gestação, do parto e do puerpério
+          </p>
+          <button>Agende sua Consulta</button>
+        </div>
+        <div className="img-wrapper">
+          <Image
+            priority
+            src="/images/foto-ney-sem-fundo.jpg"
+            alt="Ney Simões"
+            fill
+            style={{
+              objectFit: "contain",
+            }}
+            sizes="100%"
+          />
+        </div>
+      </Section>
+    </div>
   );
 };
 
 const Section = styled.section<{ isNonMobile: boolean }>`
   display: flex;
-  flex-direction: ${({ isNonMobile }) => (isNonMobile ? "row" : "column-reverse")};
-  justify-content: center;
+  flex-direction: ${({ isNonMobile }) =>
+    isNonMobile ? "row" : "column-reverse"};
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
   color: #506e62;
   background-color: #c9c6a5;
   width: 100%;
-  height: ${({ isNonMobile }) => (isNonMobile ? "calc(400px + 4rem)" : "750px")};
-  padding: 1rem;
-  gap: 2rem;
+  max-width: 1000px;
+  padding: 0 0 3rem 0;
+  height: ${({ isNonMobile }) =>
+    isNonMobile ? "calc(400px + 4rem)" : "700px"};
   .Wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    width: 95%;
+    width: 90%;
     max-width: 400px;
     min-width: 300px;
   }
@@ -74,9 +84,8 @@ const Section = styled.section<{ isNonMobile: boolean }>`
     overflow: hidden;
     width: 325px;
     height: 400px;
-    padding: 0;
-    border: 1px solid #506e62;
-    box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid #506e62; */
+    /* box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1); */
   }
 `;
 

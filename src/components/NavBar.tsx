@@ -3,11 +3,20 @@ import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const NavBar = () => {
-  const isNonMobile = useMediaQuery('(min-width:1000px)');
+  const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
-    <Nav>
+    <Nav
+      style={{
+        height: isNonMobile ? "calc(80px + 2rem)" : "calc(60px + 2rem)",
+      }}
+    >
       <div className="wrapper">
-        <Image src="/images/logo.svg" alt="Ney Simões" width={80} height={80} />
+        <Image
+          src="/images/logo.svg"
+          alt="Ney Simões"
+          width={isNonMobile ? 80 : 60}
+          height={isNonMobile ? 80 : 60}
+        />
         {isNonMobile && (
           <ul>
             <li>Especialidades</li>
@@ -35,7 +44,6 @@ const Nav = styled.nav`
   );
   color: #c9c6a5;
   width: 100%;
-  height: calc(80px + 2rem);
   ul {
     display: flex;
     flex-direction: row;

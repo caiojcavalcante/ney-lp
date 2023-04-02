@@ -10,7 +10,6 @@ const About = () => {
         className="wrapper"
         style={{
           width: "100%",
-          backgroundColor: "#506e62",
           display: "flex",
           justifyContent: "center",
         }}
