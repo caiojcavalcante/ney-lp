@@ -45,6 +45,7 @@ const Section = styled.section`
     justify-content: space-between;
     align-items: start;
     width: 50%;
+    max-width: 500px;
   }
   p {
     width: 90%;
@@ -73,19 +74,8 @@ const Section = styled.section`
     width: 325px;
     height: 400px;
     padding: 0;
-    border: 4px solid #506e62;
+    border: 1px solid #506e62;
     box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1);
-    // ::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-color: red;
-    //   z-index: 1;
-    //   transform: scale(1.1);
-    // }
   }
 `;
 

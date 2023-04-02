@@ -39,15 +39,18 @@ const Section = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
   .img-wrapper {
     position: relative;
     border-radius: 2rem;
+    border: 1px solid #506e62;
     overflow: hidden;
-    width: 320px;
+    width: 263px;
     height: 320px;
   }
   div {
     width: 50%;
+    max-width: 500px;
     height: 100%;
   }
 `;

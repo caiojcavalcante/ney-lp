@@ -5,30 +5,98 @@ const Statements = () => {
   return (
     <Section>
       <h2>Depoimentos</h2>
-      <Card>
-        <div className="imagewrapper">
-          <Image
-            src="/images/foto-ney.jpeg"
-            alt="Ney Simões"
-            width={160}
-            height={160}
-          />
-        </div>
-        <div className="baloon">
-          <h1>Filipe Raposo</h1>
-          <a>
-            Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada com
-            minha saúde, mas ele foi muito atencioso e me fez sentir à vontade
-            durante todo o atendimento.
-          </a>
-        </div>
-      </Card>
+      <div>
+        <Card>
+          <div className="img-wrapper">
+            <Image
+              src="/images/foto-ney2.jpg"
+              alt="Ney Simões"
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
+          <div className="baloon">
+            <h1>Maria das dores</h1>
+            <a>
+              Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada com
+              minha saúde, mas ele foi muito atencioso e me fez sentir à vontade
+              durante todo o atendimento.
+            </a>
+          </div>
+        </Card>
+        <Card>
+          <div className="img-wrapper">
+            <Image
+              src="/images/foto-ney2.jpg"
+              alt="Ney Simões"
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
+          <div className="baloon">
+            <h1>Maria das dores</h1>
+            <a>
+              Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada com
+              minha saúde, mas ele foi muito atencioso e me fez sentir à vontade
+              durante todo o atendimento.
+            </a>
+          </div>
+        </Card>
+      </div>
+      <div>
+        <Card>
+          <div className="img-wrapper">
+            <Image
+              src="/images/foto-ney2.jpg"
+              alt="Ney Simões"
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
+          <div className="baloon">
+            <h1>Maria das dores</h1>
+            <a>
+              Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada com
+              minha saúde, mas ele foi muito atencioso e me fez sentir à vontade
+              durante todo o atendimento.
+            </a>
+          </div>
+        </Card>
+      </div>
     </Section>
   );
 };
-
+/*
+<Card>
+<div className="img-wrapper">
+  <Image
+    src="/images/foto-ney2.jpg"
+    alt="Ney Simões"
+    fill
+    style={{
+      objectFit: "cover",
+    }}
+  />
+</div>
+<div className="baloon">
+  <h1>Maria das dores</h1>
+  <a>
+    Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada com
+    minha saúde, mas ele foi muito atencioso e me fez sentir à vontade
+    durante todo o atendimento.
+  </a>
+</div>
+</Card>
+*/
 const Section = styled.section`
   background-color: #506e62;
+  z-index: 0;
   color: #c9c6a5;
   width: 100%;
   height: 30rem;
@@ -36,11 +104,11 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .imagewrapper {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    overflow: hidden;
+  gap: 2rem;
+  div {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
   }
 `;
 
@@ -56,30 +124,48 @@ const Card = styled.div`
   }
   a {
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
   }
   h1 {
     font-size: 1rem;
   }
   .baloon {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    background-color: #c9c6a5;
+    /* background-color: #c9c6a5; */
+    background: linear-gradient(
+        140deg,
+        rgba(201, 198, 165, 1) 0%,
+        rgba(201, 198, 165, 0.5) 100%
+        );
+    box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1);
     width: 380px;
     padding: 1rem;
     border-radius: 1.5rem;
-    z-index: 2;
+    gap: 0;
     :before {
       content: "";
       position: absolute;
       top: 62px;
-      left: -150px;
-      z-index: 0;
+      left: -59px;
+      z-index: 1;
       width: 0;
       height: 0;
       border-top: 30px solid transparent;
-      border-right: 30px solid red;
+      border-right: 30px solid #b4b193;
       border-left: 30px solid transparent;
     }
+  }
+  .img-wrapper {
+    position: relative;
+    border-radius: 20rem;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    border: 4px solid #1b2421;
+    box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1);
   }
 `;
 

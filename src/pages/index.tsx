@@ -8,6 +8,7 @@ import Specialties from "@/components/Specialties";
 import About from "@/components/About";
 import Statements from "@/components/Statements";
 import styled from "styled-components";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Specialties />
         <About />
         <Statements />
+        <Contact />
       </Main>
       <footer className={styles.footer}></footer>
     </>
