@@ -1,22 +1,16 @@
 import styled from "styled-components";
 import Image from "next/image";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/swiper.min.css";
-
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-// import "swiper/css/effect-coverflow";
-
 import { EffectCoverflow, Pagination, Autoplay, Navigation } from "swiper";
 
 const Specialties = () => {
+  const isNonMobile = useMediaQuery("(min-width:1000px)");
   const imageSize = 150;
   const sliderOptions = {
     slidesPerView: 3,
-    pagination: true,
-    navigation: true,
     loop: true,
     spaceBetween: 10,
     centeredSlides: true,
@@ -27,8 +21,6 @@ const Specialties = () => {
       delay: 1000,
       disableOnInteraction: true,
     },
-    // Uncomment autoply option then you can see the swiper play automatically
-    // you can override setting options pass settings props to this component
   };
   return (
     <div
@@ -39,7 +31,7 @@ const Specialties = () => {
         justifyContent: "center",
       }}
     >
-      <Section>
+      <Section isNonMobile={isNonMobile}>
         <div className="text">
           <h1>Especialidades</h1>
           <a>
@@ -48,7 +40,7 @@ const Specialties = () => {
           </a>
         </div>
         <Swiper
-          modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+          modules={[EffectCoverflow, Autoplay]}
           {...sliderOptions}
         >
           <SwiperSlide>
@@ -145,15 +137,16 @@ const Specialties = () => {
   );
 };
 
-const Section = styled.section`
+const Section = styled.section<{ isNonMobile: boolean }>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ isNonMobile }) => (isNonMobile ? "row" : "column")};
   justify-content: center;
   align-items: center;
   background-color: #506e62;
   color: #c9c6a5;
-  padding: 2rem 0;
-  max-width: 1000px;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1100px;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -179,7 +172,7 @@ const Section = styled.section`
     transform: scale(1);
   }
   .text {
-    width: 400px;
+    width: ${({ isNonMobile }) => (isNonMobile ? "40%" : "90vw")};
   }
 `;
 
@@ -191,7 +184,7 @@ const Card = styled.div`
   align-items: center;
   color: #506e62;
   background-color: #c9c6a5;
-  height: 300px;
+  height: 280px;
   width: 250px;
   border-radius: 2rem;
   padding: 2rem 0 2rem 0;

@@ -17,6 +17,24 @@ const Contact = () => {
               />
               <a>(11) 9 9999-9999</a>
             </li>
+            <li>
+              <Image
+                src="/images/instagram.svg"
+                alt="instagram"
+                width={20}
+                height={20}
+              />
+              <a>@drneyfabricio</a>
+            </li>
+            <li>
+              <Image
+                src="/images/email.png"
+                alt="instagram"
+                width={20}
+                height={20}
+              />
+              <a>drneyfabricio@email.com</a>
+            </li>
           </ul>
         </div>
       </Section>
@@ -30,9 +48,11 @@ const Section = styled.section`
   width: 100%;
   font-weight: 600;
   background-color: #1b2421;
-  list-style-type: none;
+  ul {
+    list-style-type: none;
+  }
   color: #c9c6a5;
-  color: #506e62;
+  color: #aaaaaa;
   .wrapper {
     max-width: 1000px;
   }

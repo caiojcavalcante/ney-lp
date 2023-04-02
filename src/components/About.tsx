@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import Image from "next/image";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const About = () => {
+  const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
     <>
-      <Section>
+      <Section
+        isNonMobile={isNonMobile}
+      >
         <div>
           <h2>Sobre o Dr.</h2>
           <p>
@@ -30,13 +34,13 @@ const About = () => {
   );
 };
 
-const Section = styled.section`
+const Section = styled.section<{ isNonMobile: boolean }>`
   color: #506e62;
   background-color: #c9c6a5;
   width: 100%;
   padding: 2rem 8rem 2rem 8rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ isNonMobile }) => (isNonMobile ? "row" : "column")};
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -49,7 +53,7 @@ const Section = styled.section`
     height: 320px;
   }
   div {
-    width: 50%;
+    width: ${({ isNonMobile }) => (isNonMobile ? "50%" : "90vw")};
     max-width: 500px;
     height: 100%;
   }

@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Banner = () => {
+  const isNonMobile = useMediaQuery("(min-width: 1000px)");
   return (
-    <Section>
+    <Section isNonMobile={isNonMobile}>
       <div className="Wrapper">
         <h1>Dr. Ney Simões</h1>
         <p>
@@ -28,27 +30,26 @@ const Banner = () => {
   );
 };
 
-const Section = styled.section`
+const Section = styled.section<{ isNonMobile: boolean }>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ isNonMobile }) => (isNonMobile ? "row" : "column-reverse")};
   justify-content: center;
   align-items: center;
-  padding: 1rem 8rem;
+  padding: 1rem;
   color: #506e62;
   background-color: #c9c6a5;
   width: 100%;
-  height: calc(400px + 4rem);
-  padding: 8rem;
+  height: ${({ isNonMobile }) => (isNonMobile ? "calc(400px + 4rem)" : "750px")};
+  padding: 1rem;
+  gap: 2rem;
   .Wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    width: 50%;
-    max-width: 500px;
-  }
-  p {
-    width: 90%;
+    width: 95%;
+    max-width: 400px;
+    min-width: 300px;
   }
   button {
     font-family: "Poppins", sans-serif;
@@ -61,7 +62,7 @@ const Section = styled.section`
     border-radius: 2rem;
     margin-top: 1rem;
     border: 1px solid #506e62;
-    width: 80%;
+    width: 100%;
     :hover {
       background-color: #c9c6a5;
       color: #506e62;
