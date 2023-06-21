@@ -6,19 +6,20 @@ const Banner = () => {
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   return (
     <div
-        style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            backgroundColor: "#c9c6a5",
-        }}
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        backgroundColor: "#c9c6a5",
+      }}
     >
       <Section isNonMobile={isNonMobile}>
         <div className="Wrapper">
           <h1>Dr. Ney Simões</h1>
           <p>
-            Pós-graduado em Reprodução Humana e Medicina Fetal especialista em
-            acompanhamento da gestação, do parto e do puerpério
+            Um ginecologista especializado em trazer a qualidade de vida,
+            disposição e a fertilidade necessária para realizar seus sonhos
+            com a qualidade que você merece.
           </p>
           <button>Agende sua Consulta</button>
         </div>

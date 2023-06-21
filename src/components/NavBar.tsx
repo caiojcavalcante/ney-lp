@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Router from "next/router";
 
 const NavBar = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
@@ -19,10 +20,10 @@ const NavBar = () => {
         />
         {isNonMobile && (
           <ul>
-            <li>Especialidades</li>
-            <li>Sobre o dr.</li>
-            <li>Depoimentos</li>
-            <li>Contato</li>
+            <li onClick={() => Router.push("/#especialidades")}>Especialidades</li>
+            <li onClick={() => Router.push("/#sobre")}>Sobre o dr.</li>
+            <li onClick={() => Router.push("/#depoimentos")}>Depoimentos</li>
+            <li onClick={() => Router.push("/#contato")}>Contato</li>
           </ul>
         )}
       </div>

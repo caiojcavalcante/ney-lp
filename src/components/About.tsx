@@ -14,15 +14,15 @@ const About = () => {
           justifyContent: "center",
         }}
       >
-        <Section isNonMobile={isNonMobile}>
+        <Section 
+        id={"sobre"} 
+        isNonMobile={isNonMobile}>
           <div>
             <h2>Sobre o Dr.</h2>
             <p>
-              O Dr. Ney Simões é um médico obstetra com mais de 15 anos de
-              experiência na área. Ele sempre soube que queria se dedicar à
-              obstetrícia desde o início de sua carreira, pois acredita que
-              ajudar as mulheres a trazerem seus filhos ao mundo é uma das
-              coisas mais importantes que um médico pode fazer.
+              O Dr. Ney Simões é um médico ginecologista com mais de 20 anos de
+              experiência. Seu principal objetivo é trazer de volta a
+              fertilidade, saúde íntima, libído e empoderamento feminino com alta tecnologia e humanização.
             </p>
           </div>
           <div className="img-wrapper">

@@ -30,7 +30,7 @@ const Specialties = () => {
         justifyContent: "center",
       }}
     >
-      <Section isNonMobile={isNonMobile}>
+      <Section id={"especialidades"} isNonMobile={isNonMobile}>
         <div className="text">
           <h1>Especialidades</h1>
           <a>
@@ -38,10 +38,62 @@ const Specialties = () => {
             graduado em endoscopia ginecológica e cirurgia minimamente invasiva.
           </a>
         </div>
-        <Swiper
-          modules={[EffectCoverflow, Autoplay]}
-          {...sliderOptions}
-        >
+        <Swiper modules={[EffectCoverflow, Autoplay]} {...sliderOptions}>
+          <SwiperSlide>
+            <Card>
+              <Image
+                src="/images/slider/feto.png"
+                alt="Ney Simões"
+                width={imageSize}
+                height={imageSize}
+              />
+              <h3>Medicina Fetal</h3>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card>
+              <Image
+                src="/images/slider/parto.png"
+                alt="Ney Simões"
+                width={imageSize}
+                height={imageSize}
+              />
+              <h3>Ginecologia regenerativa</h3>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card>
+              <Image
+                src="/images/slider/implant.png"
+                alt="Ney Simões"
+                width={imageSize}
+                height={imageSize}
+              />
+              <h3>Implante Hormonal</h3>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card>
+              <Image
+                src="/images/slider/ultrassom.png"
+                alt="parto"
+                width={imageSize}
+                height={imageSize}
+              />
+              <h3>Exames de Ultrassom</h3>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card>
+              <Image
+                src="/images/slider/utero.png"
+                alt="Ney Simões"
+                width={imageSize}
+                height={imageSize}
+              />
+              <h3>Estética íntima</h3>
+            </Card>
+          </SwiperSlide>
           <SwiperSlide>
             <Card>
               <Image
@@ -83,51 +135,18 @@ const Specialties = () => {
                 width={imageSize}
                 height={imageSize}
               />
-              <h3>Saúde Ginecologica</h3>
+              <h3>Estética íntima</h3>
             </Card>
           </SwiperSlide>
           <SwiperSlide>
             <Card>
               <Image
-                src="/images/slider/feto.png"
+                src="/images/slider/implant.png"
                 alt="Ney Simões"
                 width={imageSize}
                 height={imageSize}
               />
-              <h3>Medicina Fetal</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/parto.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Acompanhamento e Cirurgia de Parto</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/ultrassom.png"
-                alt="parto"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Exames de Ultrassom</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/utero.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Saúde Ginecologica</h3>
+              <h3>Implante Hormonal</h3>
             </Card>
           </SwiperSlide>
         </Swiper>

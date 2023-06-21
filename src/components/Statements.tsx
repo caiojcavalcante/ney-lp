@@ -13,7 +13,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 const Statements = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
-    <Section>
+    <Section id={"depoimentos"}>
       <h2>Depoimentos</h2>
       <div className="swipper-wrapper-div">
         <Swiper
