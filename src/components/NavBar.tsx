@@ -53,6 +53,9 @@ const Nav = styled.nav`
     margin: 0;
     padding: 0;
   }
+  li {
+    cursor: pointer;
+  }
   .wrapper {
     width: 100%;
     max-width: 1000px;
