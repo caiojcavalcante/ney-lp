@@ -9,10 +9,10 @@ const MapContainer = (props) => {
   };
 
   const center = {
-    lat: -12.98983403494474,
-    lng: -38.47411073987677,
+    lat: -9.3832,
+    lng: -37.997,
   };
-  
+
   return (
     <Map
       google={props.google}
