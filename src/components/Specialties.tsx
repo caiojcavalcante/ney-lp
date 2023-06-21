@@ -34,8 +34,9 @@ const Specialties = () => {
         <div className="text">
           <h1>Especialidades</h1>
           <a>
-            Ginecologista e Obstetra, especializado em endometriose e pós
-            graduado em endoscopia ginecológica e cirurgia minimamente invasiva.
+            Ginecologista especializado em trazer a qualidade de vida,
+            disposição e a fertilidade necessária para realizar seus sonhos com
+            a qualidade que você merece.
           </a>
         </div>
         <Swiper modules={[EffectCoverflow, Autoplay]} {...sliderOptions}>

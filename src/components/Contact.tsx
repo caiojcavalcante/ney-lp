@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Router from "next/router";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Map from "./Map";
 
 const Contact = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
@@ -13,7 +14,17 @@ const Contact = () => {
             <h1>Contato</h1>
           </li>
           <li>
-            <button className="whatsapp">Whatsapp</button>
+            <button
+              className="whatsapp"
+              onClick={() =>
+                window.open(
+                  "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
+                  "blank"
+                )
+              }
+            >
+              Whatsapp
+            </button>
           </li>
           <li>
             <button
@@ -29,6 +40,11 @@ const Contact = () => {
         <ul>
           <li>
             <h1>Localização</h1>
+          </li>
+          <li>
+            <div className="mapWrapper">
+              <Map />
+            </div>
           </li>
           <li>
             <button
@@ -95,6 +111,13 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
     width: 100%;
     gap: 2rem;
   }
+
+  .mapWrapper {
+    width: 90%;
+    border-radius: 15px;
+    border: 2px solid #506e62;
+    overflow: hidden;
+  }
   p {
     font-family: "Manrope", sans-serif;
     font-size: 0.9rem;
@@ -117,6 +140,9 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
     color: #203e32;
     border: 2px solid #203e32;
     &:hover {
+      border: 2px solid #506e62;
+      color: #506e62;
+      background-color: #203e32;
     }
   }
   .whatsapp {
@@ -129,7 +155,8 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
       width: 100%;
       height: 100%;
       border-radius: 10rem;
-      background-color: #1f2f3c;
+      background-color: #203e32;
+      color: #506e62;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -146,7 +173,8 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
       width: 100%;
       height: 100%;
       border-radius: 10rem;
-      background-color: #1f2f3c;
+      background-color: #203e32;
+      color: #506e62;
       display: flex;
       align-items: center;
       justify-content: center;

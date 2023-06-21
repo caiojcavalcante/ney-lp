@@ -17,11 +17,20 @@ const Banner = () => {
         <div className="Wrapper">
           <h1>Dr. Ney Simões</h1>
           <p>
-            Um ginecologista especializado em trazer a qualidade de vida,
-            disposição e a fertilidade necessária para realizar seus sonhos
-            com a qualidade que você merece.
+            Ginecologista especializado em trazer a qualidade de vida,
+            disposição e a fertilidade necessária para realizar seus sonhos com
+            a qualidade que você merece.
           </p>
-          <button>Agende sua Consulta</button>
+          <button
+            onClick={() =>
+              window.open(
+                "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
+                "blank"
+              )
+            }
+          >
+            Agende sua Consulta
+          </button>
         </div>
         <div className="img-wrapper">
           <Image
@@ -66,17 +75,19 @@ const Section = styled.section<{ isNonMobile: boolean }>`
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
     font-weight: 600;
+
     background-color: #506e62;
+    color: #203e32;
     color: #c9c6a5;
     border: none;
     padding: 1rem 2rem;
     border-radius: 2rem;
     margin-top: 1rem;
-    border: 1px solid #506e62;
+    border: 3px solid #203e32;
     width: 100%;
     :hover {
-      background-color: #c9c6a5;
-      color: #506e62;
+      background-color: #faf6f7;
+      color: #203e32;
     }
   }
   .img-wrapper {
