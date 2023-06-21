@@ -7,7 +7,7 @@ import Map from "./Map";
 const Contact = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
-    <Section isNonMobileScreen={isNonMobile}>
+    <Section id={"contato"}isNonMobileScreen={isNonMobile}>
       <div className="wrapper">
         <ul>
           <li>
