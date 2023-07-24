@@ -14,7 +14,7 @@ const Statements = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
     <Section id={"depoimentos"}>
-      <h2>Depoimentos</h2>
+      <h2>O que é Dr.Ney?</h2>
       <div className="swipper-wrapper-div">
         <Swiper
           slidesPerView={2}
@@ -42,11 +42,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -65,11 +61,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -88,11 +80,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria do socorro</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -111,11 +99,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -134,11 +118,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -171,11 +151,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -194,11 +170,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -217,11 +189,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -240,11 +208,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -263,11 +227,7 @@ const Statements = () => {
               </div>
               <div className="baloon">
                 <h1>Maria das dores</h1>
-                <a>
-                  Recentemente fui atendida pelo Dr. Ney. Eu estava preocupada
-                  com minha saúde, mas ele foi muito atencioso e me fez sentir à
-                  vontade durante todo o atendimento.
-                </a>
+                <a>Dr. Ney é saúde e qualidade de vida.</a>
               </div>
             </Card>
           </SwiperSlide>
@@ -350,11 +310,12 @@ const Card = styled.div`
     flex-direction: column;
     text-align: left;
     position: relative;
+    z-index: 2;
     /* background-color: #c9c6a5; */
     background: linear-gradient(
-      140deg,
-      rgba(201, 198, 165, 1) 0%,
-      rgba(201, 198, 165, 0.5) 120%
+      90deg,
+      rgba(201, 198, 165, 1) 10%,
+      rgba(201, 198, 165, 0.5) 100%
     );
     box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1);
     width: 350px;
@@ -364,13 +325,13 @@ const Card = styled.div`
     :before {
       content: "";
       position: absolute;
-      top: 62px;
-      left: -59px;
-      z-index: 1;
+      top: 45px;
+      left: -44px;
+      z-index: 2;
       width: 0;
       height: 0;
       border-top: 30px solid transparent;
-      border-right: 30px solid #b4b193;
+      border-right: 30px solid rgba(201, 198, 165, 1);
       border-left: 30px solid transparent;
     }
   }

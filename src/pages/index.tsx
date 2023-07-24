@@ -50,4 +50,5 @@ const Main = styled.main`
   font-family: Poppins, sans-serif;
   font-size: 1.1rem;
   font-weight: 300;
+  user-select: none;
 `;

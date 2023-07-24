@@ -12,17 +12,17 @@ const About = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          padding: "3rem 0",
         }}
       >
-        <Section 
-        id={"sobre"} 
-        isNonMobile={isNonMobile}>
+        <Section id={"sobre"} isNonMobile={isNonMobile}>
           <div>
             <h2>Sobre o Dr.</h2>
             <p>
               O Dr. Ney Simões é um médico ginecologista com mais de 20 anos de
               experiência. Seu principal objetivo é trazer de volta a
-              fertilidade, saúde íntima, libído e empoderamento feminino com alta tecnologia e humanização.
+              fertilidade, saúde íntima, libído e empoderamento feminino com
+              alta tecnologia e humanização.
             </p>
           </div>
           <div className="img-wrapper">

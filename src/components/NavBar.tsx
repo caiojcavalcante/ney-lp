@@ -3,7 +3,11 @@ import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Router from "next/router";
 
-const NavBar = () => {
+interface NavBarProps {
+  hidden?: boolean;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ hidden = false }) => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
     <Nav
@@ -18,9 +22,11 @@ const NavBar = () => {
           width={isNonMobile ? 80 : 60}
           height={isNonMobile ? 80 : 60}
         />
-        {isNonMobile && (
+        {isNonMobile && !hidden && (
           <ul>
-            <li onClick={() => Router.push("/#especialidades")}>Especialidades</li>
+            <li onClick={() => Router.push("/#especialidades")}>
+              Especialidades
+            </li>
             <li onClick={() => Router.push("/#sobre")}>Sobre o dr.</li>
             <li onClick={() => Router.push("/#depoimentos")}>Depoimentos</li>
             <li onClick={() => Router.push("/#contato")}>Contato</li>
@@ -40,8 +46,8 @@ const Nav = styled.nav`
   background: linear-gradient(
     20deg,
     rgba(80, 110, 98, 1) 0%,
-    rgba(80, 110, 98, 1) 30%,
-    rgba(27, 36, 33, 1) 100%
+    /* rgba(80, 110, 98, 1) 30%,
+    rgba(27, 36, 33, 1) 100% */
   );
   color: #c9c6a5;
   width: 100%;
