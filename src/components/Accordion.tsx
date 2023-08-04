@@ -10,8 +10,8 @@ interface AccordionProps {
 }
 
 const AccordionItem = styled.div`
-  border-bottom: 3px solid #506e62;
-  border-right: 3px solid #506e62;
+  border-bottom: 3px solid ${({ theme }) => theme.color.primary.main};
+  border-right: 3px solid ${({ theme }) => theme.color.primary.main};
   margin-bottom: 10px;
   cursor: pointer;
 `;

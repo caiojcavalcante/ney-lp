@@ -7,8 +7,10 @@ import Banner from "@/components/Banner";
 import Specialties from "@/components/Specialties";
 import About from "@/components/About";
 import Statements from "@/components/Statements";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Contact from "@/components/Contact";
+import Fade from "react-reveal/Fade";
+import Theme from "@/components/Theme";
 
 export default function Home() {
   return (
@@ -18,8 +20,8 @@ export default function Home() {
         <meta
           name="description"
           content="Ginecologista especializado em trazer a qualidade de vida,
-            disposição e a fertilidade necessária para realizar seus sonhos com
-            a qualidade que você merece."
+          disposição e a fertilidade necessária para realizar seus sonhos com
+          a qualidade que você merece."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/favicon.ico" />
@@ -29,15 +31,25 @@ export default function Home() {
           href="/apple-icon-57x57.png"
         />
       </Head>
-      <Main>
-        <NavBar />
-        <Banner />
-        <Specialties />
-        <About />
-        <Statements />
-        <Contact />
-      </Main>
-      <footer className={styles.footer}></footer>
+      <ThemeProvider theme={Theme}>
+        <Main>
+          <NavBar />
+          {/* <Fade bottom> */}
+          <Banner />
+          {/* </Fade> */}
+          <Fade bottom>
+            <Specialties />
+          </Fade>
+          <Fade bottom>
+            <About />
+          </Fade>
+          <Fade bottom>
+            <Statements />
+          </Fade>
+          <Contact />
+        </Main>
+        <footer className={styles.footer}></footer>
+      </ThemeProvider>
     </>
   );
 }

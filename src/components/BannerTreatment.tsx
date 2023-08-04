@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Fade from 'react-reveal/Fade'; // Importing Zoom effect
 
-const BannerTreatment = () => {
+interface BannerTreatmentProps {
+  image: string;
+  desc: string;
+}
+
+const BannerTreatment = ({ image, desc }: BannerTreatmentProps) => {
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   return (
     <div
@@ -10,36 +16,45 @@ const BannerTreatment = () => {
         width: "100%",
         display: "flex",
         justifyContent: "center",
-        // backgroundColor: "#c9c6a5",
+        // backgroundColor: "${({ theme }) => theme.color.background}",
       }}
     >
       <Section isNonMobile={isNonMobile}>
         <div className="Wrapper">
           <h1>Implanon</h1>
           <p>
-            Com o Implanon, você poderá desfrutar da sua intimidade plenamente,
-            sem interrupções, além de aproveitar todos os outros benefícios que
-            ele oferece.
+            {desc}
           </p>
-          <button
-            onClick={() =>
-              window.open(
-                "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
-                "blank"
-              )
-            }
-          >
-            Agende sua Consulta
-          </button>
+          <Fade>
+            <button
+              onClick={() =>
+                window.open(
+                  "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
+                  "blank"
+                )
+              }
+            >
+              Agende sua Consulta
+            </button>
+          </Fade>
         </div>
-        <Image
-          priority
-          src="/images/implanon.jpg"
-          alt="Ney Simões"
-          width={500}
-          height={350}
-          sizes="100%"
-        />
+        <Fade
+          // bottom
+          duration={1000}
+          delay={500}
+        >
+          <div className="image-wrapper">
+            <Image
+              priority
+              src={image}
+              alt="Ney Simões"
+              fill={true}
+              sizes="100%"
+              placeholder="blur"
+              blurDataURL={image}
+            />
+          </div>
+        </Fade>
       </Section>
     </div>
   );
@@ -47,54 +62,66 @@ const BannerTreatment = () => {
 
 const Section = styled.section<{ isNonMobile: boolean }>`
   display: flex;
-  flex-direction: ${({ isNonMobile }) =>
-    isNonMobile ? "row" : "column-reverse"};
+  // flex-direction: ${({ isNonMobile }) => isNonMobile ? "row" : "column-reverse"};
   justify-content: space-between;
   align-items: center;
-  color: #506e62;
-  background-color: #c9c6a5;
-  width: 100%;
+  color: ${({ theme }) => theme.color.primary.main};
+  background-color: ${({ theme }) => theme.color.primary.contrastText};
+  width: 95%;
+  aspect-ratio: 2.4;
   max-width: 1000px;
   border-radius: 2rem;
   overflow: hidden;
-  height: ${({ isNonMobile }) => (isNonMobile ? "350px" : "700px")};
-  padding-bottom: ${({ isNonMobile }) => (isNonMobile ? "0" : "5rem")};
+
+  h1, p, button {
+    border: 3px dashed red;
+  }
+  h1 {
+    font-size: calc(1rem + 1vw);
+  }
+  p {
+    font-size: calc(0.5rem + 0.5vw);
+    // font-size: 50%;
+  }
+  
+  // ${({ isNonMobile }) => !isNonMobile && ".img-wrapper {border: 2px solid #506e62;border-radius: 2rem;width:350px;height:245px;}"}
   .Wrapper {
+    // background-color: red;
+    padding: 1rem 0 1rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    width: 90%;
-    max-width: 400px;
-    min-width: 300px;
+    // width: 90%;
     padding-left: ${({ isNonMobile }) => (isNonMobile ? "2rem" : "0")};
   }
   button {
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
+    font-size: 70%;
     font-weight: 600;
 
-    background-color: #506e62;
-    color: #203e32;
-    color: #c9c6a5;
+    background-color: ${({ theme }) => theme.color.primary.main};
+    color: ${({ theme }) => theme.color.primary.contrastText};
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem 10%;
     border-radius: 2rem;
     margin-top: 1rem;
-    border: 3px solid #203e32;
+    border: 3px solid ${({ theme }) => theme.color.primary.dark};
     width: 100%;
+    height: 10%;
+    cursor: pointer;
     :hover {
-      background-color: #faf6f7;
-      color: #203e32;
+      background-color: ${({ theme }) => theme.color.primary.light};
+      color: ${({ theme }) => theme.color.primary.dark};
     }
   }
-  .img-wrapper {
+  .image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* border: 1px solid #506e62; */
-    /* box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1); */
+    position: relative;
+    aspect-ratio: calc(1666 / 1143);
+    height: 100%;
   }
 `;
 

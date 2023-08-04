@@ -27,6 +27,7 @@
   "devDependencies": {
     "@types/node": "^20.4.4",
     "@types/react": "^18.2.15",
+    "react-reveal": "^1.2.2",
     "typescript": "^5.1.6"
   }
 }

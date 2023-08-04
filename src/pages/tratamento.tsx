@@ -32,7 +32,7 @@ export default function Home() {
       </Head>
       <Main>
         <NavBar hidden />
-        <BannerTreatment />
+        <BannerTreatment image="/images/implanon.jpg" desc="" />
         <Specialties />
         <About />
         <Statements />

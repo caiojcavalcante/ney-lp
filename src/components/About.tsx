@@ -42,8 +42,8 @@ const About = () => {
 };
 
 const Section = styled.section<{ isNonMobile: boolean }>`
-  color: #506e62;
-  background-color: #c9c6a5;
+  color: ${({ theme }) => theme.color.primary.main};
+  background-color: ${({ theme }) => theme.color.background};
   width: 90vw;
   height: ${({ isNonMobile }) => (isNonMobile ? "380px" : "600px")};
   max-width: 1000px;
@@ -60,7 +60,7 @@ const Section = styled.section<{ isNonMobile: boolean }>`
   .img-wrapper {
     position: relative;
     /* border-radius: 2rem;
-    border: 1px solid #506e62; */
+    border: 1px solid ${({ theme }) => theme.color.primary.main}; */
     overflow: hidden;
     width: 263px;
     height: 320px;

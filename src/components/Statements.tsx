@@ -238,7 +238,7 @@ const Statements = () => {
 };
 const Section = styled.section`
   z-index: 0;
-  color: #c9c6a5;
+  color: ${({ theme }) => theme.color.background};
   width: 100vw;
   height: 30rem;
   display: flex;
@@ -274,7 +274,7 @@ const Section = styled.section`
     }
   }
   .swiper-container {
-    color: #c9c6a5;
+    color: ${({ theme }) => theme.color.background};
   }
   .swiper-slide {
     text-align: center;
@@ -311,7 +311,7 @@ const Card = styled.div`
     text-align: left;
     position: relative;
     z-index: 2;
-    /* background-color: #c9c6a5; */
+    /* background-color: ${({ theme }) => theme.color.background}; */
     background: linear-gradient(
       90deg,
       rgba(201, 198, 165, 1) 10%,

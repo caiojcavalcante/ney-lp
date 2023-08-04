@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Router from "next/router";
+import Logo from "./Logo";
 
 interface NavBarProps {
   hidden?: boolean;
@@ -16,12 +17,13 @@ const NavBar: React.FC<NavBarProps> = ({ hidden = false }) => {
       }}
     >
       <div className="wrapper">
-        <Image
+        {/* <StyledImage
           src="/images/logo.svg"
           alt="Ney Simões"
           width={isNonMobile ? 80 : 60}
           height={isNonMobile ? 80 : 60}
-        />
+        /> */}
+        <Logo />
         {isNonMobile && !hidden && (
           <ul>
             <li onClick={() => Router.push("/#especialidades")}>
@@ -49,7 +51,7 @@ const Nav = styled.nav`
     /* rgba(80, 110, 98, 1) 30%,
     rgba(27, 36, 33, 1) 100% */
   );
-  color: #c9c6a5;
+  color: ${({ theme }) => theme.color.background};
   width: 100%;
   ul {
     display: flex;
@@ -70,6 +72,18 @@ const Nav = styled.nav`
     align-items: center;
     gap: 30%;
   }
+  //fill logo with pink
+  img {
+    //make logo pink except for the transparent
+    filter: saturate(100%) hue-rotate(-594deg)
+  }
+  svg {
+    color: ${({ theme }) => theme.color.background};
+    fill: none;
+  }
+`;
+
+const StyledImage = styled(Image)`
 `;
 
 export default NavBar;

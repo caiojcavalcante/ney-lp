@@ -10,7 +10,7 @@ const Banner = () => {
         width: "100%",
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "#c9c6a5",
+        backgroundColor: "${({ theme }) => theme.color.background}",
       }}
     >
       <Section isNonMobile={isNonMobile}>
@@ -56,7 +56,7 @@ const Section = styled.section<{ isNonMobile: boolean }>`
   justify-content: space-between;
   align-items: center;
   color: #506e62;
-  background-color: #c9c6a5;
+  background-color: ${({ theme }) => theme.color};
   width: 100%;
   max-width: 1000px;
   padding: 0 0 3rem 0;
@@ -78,7 +78,7 @@ const Section = styled.section<{ isNonMobile: boolean }>`
 
     background-color: #506e62;
     color: #203e32;
-    color: #c9c6a5;
+    color: ${({ theme }) => theme.color.background};
     border: none;
     padding: 1rem 2rem;
     border-radius: 2rem;

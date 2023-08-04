@@ -79,7 +79,7 @@ const VerticalBar = styled.div`
 const Section = styled.section<{ isNonMobile: boolean }>`
   position: relative;
   color: #506e62;
-  background-color: #c9c6a5;
+  background-color: ${({ theme }) => theme.color.background};
   width: 90vw;
   margin: 3rem 0;
   user-select: none;

@@ -75,7 +75,7 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #c9c6a5;
+  background-color: ${({ theme }) => theme.color.background};
   color: #506e62;
   p {
     text-align: center;

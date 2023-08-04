@@ -161,7 +161,7 @@ const Section = styled.section<{ isNonMobile: boolean }>`
   flex-direction: ${({ isNonMobile }) => (isNonMobile ? "row" : "column")};
   justify-content: center;
   align-items: center;
-  color: #c9c6a5;
+  color: ${({ theme }) => theme.color.background};
   padding: 2rem;
   gap: 2rem;
   max-width: 1100px;
@@ -200,8 +200,8 @@ const Card = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  color: #506e62;
-  background-color: #c9c6a5;
+  color: ${({ theme }) => theme.color.primary.main};
+  background-color: ${({ theme }) => theme.color.background};
   height: 280px;
   width: 250px;
   border-radius: 2rem;
