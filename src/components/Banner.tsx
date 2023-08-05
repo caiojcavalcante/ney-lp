@@ -1,53 +1,59 @@
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Theme from "@/components/Theme";
+import { RevealWrapper } from "next-reveal";
 
 const Banner = () => {
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        backgroundColor: "#c9c6a5",
-      }}
-    >
-      <Section isNonMobile={isNonMobile}>
-        <div className="Wrapper">
-          <h1>Dr. Ney Simões</h1>
-          <p>
-            Ginecologista especializado em trazer a qualidade de vida,
-            disposição e a fertilidade necessária para realizar seus sonhos com
-            a qualidade que você merece.
-          </p>
-          <button
-            onClick={() =>
-              window.open(
-                "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
-                "blank"
-              )
-            }
-          >
-            Agende sua Consulta
-          </button>
-        </div>
-        <div className="img-wrapper">
-          <Image
-            priority
-            src="/images/foto-ney-sem-fundo.jpg"
-            alt="Ney Simões"
-            fill
-            style={{
-              objectFit: "contain",
-            }}
-            sizes="100%"
-          />
-        </div>
-      </Section>
-    </div>
+    <ThemeProvider theme={Theme}>
+      <RevealWrapper>
+        <Center>
+          <Section isNonMobile={isNonMobile}>
+            <div className="Wrapper">
+              <h1>Dr. Ney Simões</h1>
+              <p>
+                Ginecologista especializado em trazer a qualidade de vida,
+                disposição e a fertilidade necessária para realizar seus sonhos
+                com a qualidade que você merece.
+              </p>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
+                    "blank"
+                  )
+                }
+              >
+                Agende sua Consulta
+              </button>
+            </div>
+            <div className="img-wrapper">
+              <Image
+                priority
+                src="/images/foto-ney-sem-fundo.jpg"
+                alt="Ney Simões"
+                fill
+                sizes="40vw"
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+          </Section>
+        </Center>
+      </RevealWrapper>
+    </ThemeProvider>
   );
 };
+
+const Center = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.color.background};
+`;
 
 const Section = styled.section<{ isNonMobile: boolean }>`
   display: flex;
@@ -56,7 +62,7 @@ const Section = styled.section<{ isNonMobile: boolean }>`
   justify-content: space-between;
   align-items: center;
   color: #506e62;
-  background-color: #c9c6a5;
+  background-color: ${({ theme }) => theme.color};
   width: 100%;
   max-width: 1000px;
   padding: 0 0 3rem 0;
@@ -78,7 +84,7 @@ const Section = styled.section<{ isNonMobile: boolean }>`
 
     background-color: #506e62;
     color: #203e32;
-    color: #c9c6a5;
+    color: ${({ theme }) => theme.color.background};
     border: none;
     padding: 1rem 2rem;
     border-radius: 2rem;

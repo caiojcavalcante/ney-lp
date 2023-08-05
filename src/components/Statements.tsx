@@ -9,236 +9,239 @@ import "swiper/css/navigation";
 import { Autoplay } from "swiper";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { RevealWrapper } from "next-reveal";
 
 const Statements = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
-    <Section id={"depoimentos"}>
-      <h2>O que é Dr.Ney?</h2>
-      <div className="swipper-wrapper-div">
-        <Swiper
-          slidesPerView={2}
-          spaceBetween={isNonMobile ? 100 : 10}
-          loop={true}
-          autoplay={{ delay: 200 }}
-          speed={7000}
-          //   centeredSlides
-          freeMode
-          modules={[Autoplay]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-do-socorro.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria do socorro</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-        </Swiper>
-      </div>
-      <div className="swipper-wrapper-div">
-        <Swiper
-          slidesPerView={2}
-          spaceBetween={isNonMobile ? 100 : 10}
-          loop={true}
-          autoplay={{ delay: 0 }}
-          speed={7000}
-          centeredSlides
-          freeMode
-          modules={[Autoplay]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <div className="img-wrapper">
-                <Image
-                  sizes="100px"
-                  src="/images/maria-das-dores.jpg"
-                  alt="Ney Simões"
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <div className="baloon">
-                <h1>Maria das dores</h1>
-                <a>Dr. Ney é saúde e qualidade de vida.</a>
-              </div>
-            </Card>
-          </SwiperSlide>
-        </Swiper>
-      </div>
-    </Section>
+    <RevealWrapper delay={600}>
+      <Section id={"depoimentos"}>
+        <h2>O que é Dr.Ney?</h2>
+        <div className="swipper-wrapper-div">
+          <Swiper
+            slidesPerView={2}
+            spaceBetween={isNonMobile ? 100 : 10}
+            loop={true}
+            autoplay={{ delay: 200 }}
+            speed={7000}
+            //   centeredSlides
+            freeMode
+            modules={[Autoplay]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-do-socorro.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria do socorro</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div className="swipper-wrapper-div">
+          <Swiper
+            slidesPerView={2}
+            spaceBetween={isNonMobile ? 100 : 10}
+            loop={true}
+            autoplay={{ delay: 0 }}
+            speed={7000}
+            centeredSlides
+            freeMode
+            modules={[Autoplay]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <div className="img-wrapper">
+                  <Image
+                    sizes="100px"
+                    src="/images/maria-das-dores.jpg"
+                    alt="Ney Simões"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div className="baloon">
+                  <h1>Maria das dores</h1>
+                  <a>Dr. Ney é saúde e qualidade de vida.</a>
+                </div>
+              </Card>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </Section>
+    </RevealWrapper>
   );
 };
 const Section = styled.section`
   z-index: 0;
-  color: #c9c6a5;
+  color: ${({ theme }) => theme.color.secundary.main};
   width: 100vw;
   height: 30rem;
   display: flex;
@@ -266,15 +269,12 @@ const Section = styled.section`
       height: 100%;
       background: linear-gradient(
         90deg,
-        #506e62 0%,
+        ${({ theme }) => theme.color.primary.main} 0%,
         #0000 20%,
         #0000 80%,
-        #506e62 100%
+        ${({ theme }) => theme.color.primary.main} 100%
       );
     }
-  }
-  .swiper-container {
-    color: #c9c6a5;
   }
   .swiper-slide {
     text-align: center;
@@ -290,7 +290,7 @@ const Section = styled.section`
 
 const Card = styled.div`
   display: flex;
-  color: #506e62;
+  color: ${({ theme }) => theme.color.primary.main};
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -306,16 +306,17 @@ const Card = styled.div`
     font-size: 1rem;
   }
   .baloon {
+    color: ${({ theme }) => theme.color.primary.main};
     display: flex;
     flex-direction: column;
     text-align: left;
     position: relative;
     z-index: 2;
-    /* background-color: #c9c6a5; */
+    /* background-color: ${({ theme }) => theme.color.background}; */
     background: linear-gradient(
-      90deg,
-      rgba(201, 198, 165, 1) 10%,
-      rgba(201, 198, 165, 0.5) 100%
+      60deg,
+      ${({ theme }) => theme.color.secundary.main} 10%,
+      ${({ theme }) => theme.color.primary.dark} 170%
     );
     box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1);
     width: 350px;
@@ -331,7 +332,7 @@ const Card = styled.div`
       width: 0;
       height: 0;
       border-top: 30px solid transparent;
-      border-right: 30px solid rgba(201, 198, 165, 1);
+      border-right: 30px solid ${({ theme }) => theme.color.secundary.main};
       border-left: 30px solid transparent;
     }
   }
@@ -342,7 +343,7 @@ const Card = styled.div`
     width: 100px;
     height: 100px;
     padding: 0;
-    border: 4px solid #1b2421;
+    border: 4px solid ${({ theme }) => theme.color.primary.dark};
     box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1);
   }
 `;

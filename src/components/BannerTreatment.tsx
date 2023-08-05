@@ -1,100 +1,190 @@
 import styled from "styled-components";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { RevealWrapper } from "next-reveal";
+import { useState, useEffect } from "react";
 
-const BannerTreatment = () => {
+interface BannerTreatmentProps {
+  image: string;
+  title: string;
+  desc: string;
+}
+
+const BannerTreatment = ({ image, title, desc }: BannerTreatmentProps) => {
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
+
+  const [isPink, setIsPink] = useState(false);
+
+  useEffect(() => {
+    setIsPink(window.location.pathname === "/fraxx");
+  }, []);
+
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        // backgroundColor: "#c9c6a5",
-      }}
-    >
-      <Section isNonMobile={isNonMobile}>
-        <div className="Wrapper">
-          <h1>Implanon</h1>
-          <p>
-            Com o Implanon, você poderá desfrutar da sua intimidade plenamente,
-            sem interrupções, além de aproveitar todos os outros benefícios que
-            ele oferece.
-          </p>
-          <button
-            onClick={() =>
-              window.open(
-                "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
-                "blank"
-              )
-            }
-          >
-            Agende sua Consulta
-          </button>
-        </div>
-        <Image
-          priority
-          src="/images/implanon.jpg"
-          alt="Ney Simões"
-          width={500}
-          height={350}
-          sizes="100%"
-        />
-      </Section>
-    </div>
+    <RevealWrapper>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          //   alignItems: "center",
+          alignItems: "start",
+          flexDirection: isNonMobile ? "row" : "column",
+          // backgroundColor: "${({ theme }) => theme.color.background}",
+        }}
+      >
+        <Section isNonMobile={isNonMobile} isPink={isPink}>
+          {isNonMobile && (
+            <div className="Wrapper">
+              <h1>{title}</h1>
+              <p>{desc}</p>
+              <RevealWrapper>
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
+                      "blank"
+                    )
+                  }
+                >
+                  Agende sua Consulta
+                </button>
+              </RevealWrapper>
+            </div>
+          )}
+          <div className="image-wrapper">
+            <Image
+              priority
+              src={image}
+              alt="Ney Simões"
+              fill={true}
+              sizes="100vw"
+              placeholder="blur"
+              blurDataURL={image}
+            />
+          </div>
+        </Section>
+        {!isNonMobile && (
+          <TextContainer>
+            <TextWrapper>
+              <h1>{title}</h1>
+              <p>{desc}</p>
+            </TextWrapper>
+            <RevealWrapper>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
+                    "blank"
+                  )
+                }
+              >
+                Agende sua Consulta
+              </button>
+            </RevealWrapper>
+          </TextContainer>
+        )}
+      </div>
+    </RevealWrapper>
   );
 };
 
-const Section = styled.section<{ isNonMobile: boolean }>`
-  display: flex;
-  flex-direction: ${({ isNonMobile }) =>
-    isNonMobile ? "row" : "column-reverse"};
-  justify-content: space-between;
-  align-items: center;
-  color: #506e62;
-  background-color: #c9c6a5;
-  width: 100%;
-  max-width: 1000px;
-  border-radius: 2rem;
-  overflow: hidden;
-  height: ${({ isNonMobile }) => (isNonMobile ? "350px" : "700px")};
-  padding-bottom: ${({ isNonMobile }) => (isNonMobile ? "0" : "5rem")};
-  .Wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    width: 90%;
-    max-width: 400px;
-    min-width: 300px;
-    padding-left: ${({ isNonMobile }) => (isNonMobile ? "2rem" : "0")};
-  }
-  button {
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
+const TextWrapper = styled.div`
+  width: 90%;
+  color: ${({ theme }) => theme.color.secundary.main};
+`;
 
-    background-color: #506e62;
-    color: #203e32;
-    color: #c9c6a5;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-    margin-top: 1rem;
-    border: 3px solid #203e32;
-    width: 100%;
-    :hover {
-      background-color: #faf6f7;
-      color: #203e32;
-    }
-  }
-  .img-wrapper {
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 98vw;
+  text-align: start;
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 4rem;
 
-    /* border: 1px solid #506e62; */
-    /* box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.1); */
+    background-color: ${({ theme }) => theme.color.secundary.main};
+    color: ${({ theme }) => theme.color.primary.light};
+    border-radius: 2rem;
+
+    margin-top: 1rem;
+    border: 2px solid ${({ theme }) => theme.color.primary.dark};
+    cursor: pointer;
+    :hover {
+      background-color: ${({ theme }) => theme.color.primary.light};
+      color: ${({ theme }) => theme.color.primary.dark};
+    }
+  }
+`;
+
+const Section = styled.section<{ isNonMobile: boolean; isPink: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.color.primary.main};
+  background-color: ${({ theme }) => theme.color.primary.contrastText};
+  aspect-ratio: 2.4;
+  aspect-ratio: ${({ isNonMobile }) => (isNonMobile ? "2.4" : "1.8")};
+  max-width: 1000px !important;
+  width: 98vw;
+  border-radius: calc(1vw + 1rem);
+  overflow: hidden;
+
+  h1 {
+    font-size: calc(1rem + 1.8vw);
+  }
+  p {
+    font-size: calc(0.6rem + 0.4vw);
+    font-weight: 400;
+    // font-size: 50%;
+  }
+
+  .Wrapper {
+    box-sizing: border-box;
+    /* background-color: red; */
+    margin: 3rem 0 3rem 5%;
+    // width: 90%;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: calc(0.3rem + 0.5vw);
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+
+    background-color: ${({ theme }) => theme.color.primary.main};
+    color: ${({ theme }) => theme.color.primary.contrastText};
+    border-radius: 2rem;
+
+    margin-top: 1rem;
+    border: 2px solid ${({ theme }) => theme.color.primary.dark};
+    width: 100%;
+    height: 10%;
+    cursor: pointer;
+    :hover {
+      background-color: ${({ theme }) => theme.color.primary.light};
+      color: ${({ theme }) => theme.color.primary.dark};
+    }
+  }
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    aspect-ratio: calc(1040 / 731);
+    height: 100%;
+    width: fit-content;
+    //translate
+    ${({ isPink, isNonMobile }) =>
+      !isPink && !isNonMobile && "transform: translateX(15%);"}
   }
 `;
 

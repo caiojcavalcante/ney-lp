@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
+import { useEffect, useState } from "react";
 import { EffectCoverflow, Pagination, Autoplay, Navigation } from "swiper";
+import { RevealWrapper } from "next-reveal";
 
 const Specialties = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
@@ -22,137 +23,145 @@ const Specialties = () => {
       disableOnInteraction: true,
     },
   };
+  const [isPink, setIsPink] = useState("");
+
+  useEffect(() => {
+    setIsPink(window.location.pathname.includes("fraxx") ? "-pink" : "");
+  }, [])
+  
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <Section id={"especialidades"} isNonMobile={isNonMobile}>
-        <div className="text">
-          <h1>Especialidades</h1>
-          <a>
-            Ginecologista especializado em trazer a qualidade de vida,
-            disposição e a fertilidade necessária para realizar seus sonhos com
-            a qualidade que você merece.
-          </a>
-        </div>
-        <Swiper modules={[EffectCoverflow, Autoplay]} {...sliderOptions}>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/feto.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Medicina Fetal</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/parto.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Ginecologia regenerativa</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/implant.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Implante Hormonal</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/ultrassom.png"
-                alt="parto"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Exames de Ultrassom</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/utero.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Estética íntima</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/feto.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Medicina Fetal</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/parto.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Acompanhamento e Cirurgia de Parto</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/ultrassom.png"
-                alt="parto"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Exames de Ultrassom</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/utero.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Estética íntima</h3>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <Image
-                src="/images/slider/implant.png"
-                alt="Ney Simões"
-                width={imageSize}
-                height={imageSize}
-              />
-              <h3>Implante Hormonal</h3>
-            </Card>
-          </SwiperSlide>
-        </Swiper>
-      </Section>
-    </div>
+    <RevealWrapper delay={600}>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Section id={"especialidades"} isNonMobile={isNonMobile}>
+          <div className="text">
+            <h1>Especialidades</h1>
+            <a>
+              Ginecologista especializado em trazer a qualidade de vida,
+              disposição e a fertilidade necessária para realizar seus sonhos
+              com a qualidade que você merece.
+            </a>
+          </div>
+          <Swiper modules={[EffectCoverflow, Autoplay]} {...sliderOptions}>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/feto${isPink}.png`}
+                  alt="Ney Simões"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Medicina Fetal</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/parto${isPink}.png`}
+                  alt="Ney Simões"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Ginecologia regenerativa</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/implant${isPink}.png`}
+                  alt="Ney Simões"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Implante Hormonal</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/ultrassom${isPink}.png`}
+                  alt="parto"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Exames de Ultrassom</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/utero${isPink}.png`}
+                  alt="Ney Simões"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Estética íntima</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/feto${isPink}.png`}
+                  alt="Ney Simões"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Medicina Fetal</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/parto${isPink}.png`}
+                  alt="Ney Simões"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Acompanhamento e Cirurgia de Parto</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/ultrassom${isPink}.png`}
+                  alt="parto"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Exames de Ultrassom</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/utero${isPink}.png`}
+                  alt="Ney Simões"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Estética íntima</h3>
+              </Card>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card>
+                <Image
+                  src={`/images/slider/implant${isPink}.png`}
+                  alt="Ney Simões"
+                  width={imageSize}
+                  height={imageSize}
+                />
+                <h3>Implante Hormonal</h3>
+              </Card>
+            </SwiperSlide>
+          </Swiper>
+        </Section>
+      </div>
+    </RevealWrapper>
   );
 };
 
@@ -161,7 +170,7 @@ const Section = styled.section<{ isNonMobile: boolean }>`
   flex-direction: ${({ isNonMobile }) => (isNonMobile ? "row" : "column")};
   justify-content: center;
   align-items: center;
-  color: #c9c6a5;
+  color: ${({ theme }) => theme.color.primary.dark};
   padding: 2rem;
   gap: 2rem;
   max-width: 1100px;
@@ -200,8 +209,8 @@ const Card = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  color: #506e62;
-  background-color: #c9c6a5;
+  color: ${({ theme }) => theme.color.primary.main};
+  background-color: ${({ theme }) => theme.color.secundary.main};
   height: 280px;
   width: 250px;
   border-radius: 2rem;
