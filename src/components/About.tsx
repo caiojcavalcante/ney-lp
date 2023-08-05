@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { RevealWrapper } from "next-reveal";
 
 const About = () => {
   const isNonMobile = useMediaQuery("(min-width:1000px)");
   return (
-    <>
+    <RevealWrapper>
       <div
         className="wrapper"
         style={{
@@ -30,14 +31,12 @@ const About = () => {
               src="/images/foto-ney2-sem-fundo.jpg"
               alt="Ney Simões"
               fill
-              style={{
-                objectFit: "contain",
-              }}
+              sizes="40vw"
             />
           </div>
         </Section>
       </div>
-    </>
+    </RevealWrapper>
   );
 };
 

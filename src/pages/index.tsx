@@ -9,8 +9,8 @@ import About from "@/components/About";
 import Statements from "@/components/Statements";
 import styled, { ThemeProvider } from "styled-components";
 import Contact from "@/components/Contact";
-import Fade from "react-reveal/Fade";
 import Theme from "@/components/Theme";
+import { RevealWrapper } from "next-reveal";
 
 export default function Home() {
   return (
@@ -34,18 +34,18 @@ export default function Home() {
       <ThemeProvider theme={Theme}>
         <Main>
           <NavBar />
-          {/* <Fade bottom> */}
-          <Banner />
-          {/* </Fade> */}
-          <Fade bottom>
+          <RevealWrapper>
+            <Banner />
+          </RevealWrapper>
+          <RevealWrapper>
             <Specialties />
-          </Fade>
-          <Fade bottom>
+          </RevealWrapper>
+          <RevealWrapper>
             <About />
-          </Fade>
-          <Fade bottom>
+          </RevealWrapper>
+          <RevealWrapper>
             <Statements />
-          </Fade>
+          </RevealWrapper>
           <Contact />
         </Main>
         <footer className={styles.footer}></footer>

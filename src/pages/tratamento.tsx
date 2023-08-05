@@ -32,11 +32,10 @@ export default function Home() {
       </Head>
       <Main>
         <NavBar hidden />
-        <BannerTreatment image="/images/implanon.jpg" desc="" />
+        <BannerTreatment image="/images/implanon.jpg" title="" desc="" />
         <Specialties />
         <About />
         <Statements />
-        <FAQ />
         <Contact />
       </Main>
       <footer className={styles.footer}></footer>

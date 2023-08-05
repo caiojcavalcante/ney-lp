@@ -17,12 +17,6 @@ const NavBar: React.FC<NavBarProps> = ({ hidden = false }) => {
       }}
     >
       <div className="wrapper">
-        {/* <StyledImage
-          src="/images/logo.svg"
-          alt="Ney Simões"
-          width={isNonMobile ? 80 : 60}
-          height={isNonMobile ? 80 : 60}
-        /> */}
         <Logo />
         {isNonMobile && !hidden && (
           <ul>
@@ -44,14 +38,6 @@ const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  /* background-color: #506e62; */
-  background: linear-gradient(
-    20deg,
-    rgba(80, 110, 98, 1) 0%,
-    /* rgba(80, 110, 98, 1) 30%,
-    rgba(27, 36, 33, 1) 100% */
-  );
-  color: ${({ theme }) => theme.color.background};
   width: 100%;
   ul {
     display: flex;
@@ -75,15 +61,16 @@ const Nav = styled.nav`
   //fill logo with pink
   img {
     //make logo pink except for the transparent
-    filter: saturate(100%) hue-rotate(-594deg)
+    filter: saturate(100%) hue-rotate(-594deg);
   }
   svg {
-    color: ${({ theme }) => theme.color.background};
+    /* stroke: ${({ theme }) => theme.color.background}; */
+    stroke: ${({ theme }) => theme.color.logo};
+    stroke-width: 0.5rem;
     fill: none;
   }
 `;
 
-const StyledImage = styled(Image)`
-`;
+const StyledImage = styled(Image)``;
 
 export default NavBar;
