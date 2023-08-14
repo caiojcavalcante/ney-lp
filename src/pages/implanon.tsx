@@ -3,12 +3,11 @@ import styles from "@/styles/Home.module.css";
 import NavBar from "@/components/NavBar";
 import BannerTreatment from "@/components/BannerTreatment";
 import Specialties from "@/components/Specialties";
-import About from "@/components/About";
-import Statements from "@/components/Statements";
 import styled, { ThemeProvider } from "styled-components";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Theme from "@/components/Theme";
+import CTA from "@/components/CTA";
 
 interface FAQData {
   title: string;
@@ -75,8 +74,9 @@ export default function Home() {
           />
           <Specialties />
           {/* <About /> */}
-          <Statements />
+          {/* <Statements /> */}
           <FAQ faqData={faqData} />
+          <CTA />
           <Contact />
         </Main>
         <footer className={styles.footer}></footer>

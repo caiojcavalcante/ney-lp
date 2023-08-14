@@ -5,8 +5,7 @@ import styles from "@/styles/Home.module.css";
 import NavBar from "@/components/NavBar";
 import BannerTreatment from "@/components/BannerTreatment";
 import Specialties from "@/components/Specialties";
-import About from "@/components/About";
-import Statements from "@/components/Statements";
+import CTA from "@/components/CTA";
 import styled, { ThemeProvider } from "styled-components";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
@@ -48,7 +47,7 @@ const faqData: FAQData[] = [
 export default function Home() {
   const title = "Fraxx";
   const desc =
-    "Com o Fraxx, você pode ter uma pepeca mais jovem, saudável e bonita.";
+    "O Fraxx ajuda a rejuvenescer e melhorar a aparência da região íntima, elevando sua autoestima e qualidade de vida.";
   return (
     <>
       <ThemeProvider theme={PinkTheme}>
@@ -76,8 +75,9 @@ export default function Home() {
             desc={desc}
           />
           <Specialties />
-          <Statements />
+          {/* <Statements /> */}
           <FAQ faqData={faqData} />
+          <CTA />
           <Contact />
         </Main>
         <footer className={styles.footer}></footer>

@@ -142,7 +142,7 @@ const Section = styled.section<{ isNonMobileScreen: boolean }>`
     border: none;
     background-color: ${({ theme }) => theme.color.primary.main};
     color: ${({ theme }) => theme.color.secundary.dark};
-    border: 2px solid ${({ theme }) => theme.color.secundary.main};
+    border: 2px solid ${({ theme }) => theme.color.primary.main};
     &:hover {
       border: 2px solid ${({ theme }) => theme.color.primary.main};
       color: ${({ theme }) => theme.color.primary.main};

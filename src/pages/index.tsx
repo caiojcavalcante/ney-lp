@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import NavBar from "@/components/NavBar";
 import Banner from "@/components/Banner";
+import CTA from "@/components/CTA";
 import Specialties from "@/components/Specialties";
 import About from "@/components/About";
 import Statements from "@/components/Statements";
@@ -43,9 +44,10 @@ export default function Home() {
           <RevealWrapper>
             <About />
           </RevealWrapper>
-          <RevealWrapper>
+          {/* <RevealWrapper>
             <Statements />
-          </RevealWrapper>
+          </RevealWrapper> */}
+          <CTA />
           <Contact />
         </Main>
         <footer className={styles.footer}></footer>
