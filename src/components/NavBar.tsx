@@ -24,7 +24,7 @@ const NavBar: React.FC<NavBarProps> = ({ hidden = false }) => {
               Especialidades
             </li>
             <li onClick={() => Router.push("/#sobre")}>Sobre o dr.</li>
-            <li onClick={() => Router.push("/#depoimentos")}>Depoimentos</li>
+            {/* <li onClick={() => Router.push("/#depoimentos")}>Depoimentos</li> */}
             <li onClick={() => Router.push("/#contato")}>Contato</li>
           </ul>
         )}
