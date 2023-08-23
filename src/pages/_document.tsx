@@ -23,13 +23,6 @@ export default function Document() {
             `,
           }}
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <body>
         <noscript>
           <img
             height="1"
@@ -38,6 +31,13 @@ export default function Document() {
             src="https://www.facebook.com/tr?id=680424287295300&ev=PageView&noscript=1"
           />
         </noscript>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <body>
         <Main />
         <NextScript />
       </body>
