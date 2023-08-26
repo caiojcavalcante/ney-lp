@@ -117,17 +117,6 @@ const Specialties = () => {
             <SwiperSlide>
               <Card>
                 <Image
-                  src={`/images/slider/parto${isPink}.png`}
-                  alt="Ney Simões"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Acompanhamento e Cirurgia de Parto</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
                   src={`/images/slider/ultrassom${isPink}.png`}
                   alt="parto"
                   width={imageSize}
