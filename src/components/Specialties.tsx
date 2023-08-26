@@ -25,10 +25,35 @@ const Specialties = () => {
   };
   const [isPink, setIsPink] = useState("");
 
+  const link = "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney%20a%20respeito%20de%20";
+
+  const specialties = [
+    {
+      title: "Medicina Fetal",
+      image: `/images/slider/feto${isPink}.png`,
+    },
+    {
+      title: "Ginecologia regenerativa",
+      image: `/images/slider/parto${isPink}.png`,
+    },
+    {
+      title: "Implante Hormonal",
+      image: `/images/slider/implant${isPink}.png`,
+    },
+    {
+      title: "Exames de Ultrassom",
+      image: `/images/slider/ultrassom${isPink}.png`,
+    },
+    {
+      title: "Estética íntima",
+      image: `/images/slider/utero${isPink}.png`,
+    },
+  ];
+
   useEffect(() => {
     setIsPink(window.location.pathname.includes("fraxx") ? "-pink" : "");
-  }, [])
-  
+  }, []);
+
   return (
     <RevealWrapper delay={600}>
       <div
@@ -48,105 +73,26 @@ const Specialties = () => {
             </a>
           </div>
           <Swiper modules={[EffectCoverflow, Autoplay]} {...sliderOptions}>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/feto${isPink}.png`}
-                  alt="Ney Simões"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Medicina Fetal</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/parto${isPink}.png`}
-                  alt="Ney Simões"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Ginecologia regenerativa</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/implant${isPink}.png`}
-                  alt="Ney Simões"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Implante Hormonal</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/ultrassom${isPink}.png`}
-                  alt="parto"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Exames de Ultrassom</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/utero${isPink}.png`}
-                  alt="Ney Simões"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Estética íntima</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/feto${isPink}.png`}
-                  alt="Ney Simões"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Medicina Fetal</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/ultrassom${isPink}.png`}
-                  alt="parto"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Exames de Ultrassom</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/utero${isPink}.png`}
-                  alt="Ney Simões"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Estética íntima</h3>
-              </Card>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card>
-                <Image
-                  src={`/images/slider/implant${isPink}.png`}
-                  alt="Ney Simões"
-                  width={imageSize}
-                  height={imageSize}
-                />
-                <h3>Implante Hormonal</h3>
-              </Card>
-            </SwiperSlide>
+            {specialties.map((specialty, index) => (
+              <SwiperSlide key={index}>
+                <Card
+                  onClick={() =>
+                    window.open(
+                      link + specialty.title.split(" ").join("%20"),
+                      "blank"
+                    )
+                  }
+                >
+                  <Image
+                    src={specialty.image}
+                    alt="Ney Simões"
+                    width={imageSize}
+                    height={imageSize}
+                  />
+                  <h3>{specialty.title}</h3>
+                </Card>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </Section>
       </div>
