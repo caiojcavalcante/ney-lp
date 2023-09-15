@@ -19,6 +19,9 @@ const BannerTreatment = ({ image, title, desc }: BannerTreatmentProps) => {
     setIsPink(window.location.pathname === "/fraxx");
   }, []);
 
+  const link = "https://api.whatsapp.com/send?phone=558287290045&text=";
+  const url = `${link}Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney%20a%20respeito%20do%20%20tratamento%20${title}.`;
+  
   return (
     <RevealWrapper>
       <div
@@ -41,7 +44,7 @@ const BannerTreatment = ({ image, title, desc }: BannerTreatmentProps) => {
                 <button
                   onClick={() =>
                     window.open(
-                      "https://api.whatsapp.com/send?phone=558287290045&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Ney.",
+                      url,
                       "blank"
                     )
                   }
